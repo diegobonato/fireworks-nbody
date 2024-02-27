@@ -29,7 +29,7 @@ Each process is taken care of by a **worker**. The set of all workers is called 
 
 <center>
     <figure>
-        <img src="../attachments_report_cpu_optimization/plots/multiprocessing_vs_multithreading.png" alt="Comparison Image">
+        <img src="./attachments_report_cpu_optimization/plots/multiprocessing_vs_multithreading.png" alt="Comparison Image">
     </figure>
 </center>
 
@@ -72,7 +72,7 @@ The biggest problems arise when trying to compute a matrix multiplication using 
 
 <center>
     <figure>
-        <img src="../attachments_report_cpu_optimization/plots/numba_timings.png" alt="Comparison Image">
+        <img src="./attachments_report_cpu_optimization/plots/numba_timings.png" alt="Comparison Image">
     </figure>
 </center>
 
@@ -94,7 +94,7 @@ Finally, we show an extra analysis comparing the performance of the `multiproces
 
 <center>
     <figure>
-        <img src="../attachments_report_cpu_optimization/plots/comparison_single_evo_parallel_compute.png" alt="Comparison Image">
+        <img src="./attachments_report_cpu_optimization/plots/comparison_single_evo_parallel_compute.png" alt="Comparison Image">
     </figure>
 </center>
 
