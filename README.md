@@ -20,4 +20,11 @@ After running `pip install fireworks` you can start running your first N-Body si
 
     * `fireworks.nbodylib.dynamics` : This module contains a collection of functions to estimate acceleration due to gravitational forces.
 
-    * `fireworks.nbodylib.dynamics`
+    * `fireworks.nbodylib.integrators` : This module contains a collection of integrators to integrate one step of the ODE N-body problem.
+    
+    * `fireworks.nbodylib.nutits` : This module contains functions and utilities to deal with N-body units and units conversion.
+
+    * `fireworks.nbodylib.potentials` : This module contains a collection of classes and functions to estimate acceleration due to gravitational  forces of a fixed potential.
+
+    * `fireworks.nbodylib.timesteps` : This module contains functions and utilities to estimate the timestep for the Nbody integrations.
+
