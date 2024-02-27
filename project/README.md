@@ -119,7 +119,7 @@ We find that the parallelized version of numba direct is 5 times faster than the
 
 <center>
     <figure>
-        <img src="../attachments_report_cpu_optimization/plots/numba_vs_pool.png" alt="Comparison Image">
+        <img src="./attachments_report_cpu_optimization/plots/numba_vs_pool.png" alt="Comparison Image">
     </figure>
 </center>
 
