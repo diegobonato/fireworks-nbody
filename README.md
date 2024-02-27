@@ -27,6 +27,14 @@ You can find more informations in the `project` folder.
     <certercaption></certercaption>
 </center>
 
+<center>
+    <figure>
+        <img src="project/attachments_report_cpu_optimization/plots/parallel_vs_serial.png" alt="Comparison Image">
+        <figcaption>This is the caption for your image.</figcaption>
+    </figure>
+</center>
+
+
 
 ## How to use Fireworks
 
