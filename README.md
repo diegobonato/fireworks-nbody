@@ -23,14 +23,9 @@ We find a significant speed-up of the code in both cases, even though optimizati
 You can find more informations in the `project` folder.
 
 <center>
-    <img src="project/attachments_report_cpu_optimization/plots/comparison_single_evo_parallel_compute.png"/>
-    <certercaption></certercaption>
-</center>
-
-<center>
     <figure>
-        <img src="project/attachments_report_cpu_optimization/plots/parallel_vs_serial.png" alt="Comparison Image">
-        <figcaption>This is the caption for your image.</figcaption>
+        <img src="project/attachments_report_cpu_optimization/plots/comparison_single_evo_parallel_compute.png" alt="Comparison Image">
+        <figcaption>Using multiprocessing (MPX) speeds up the computation of the acceleration for both the serial (two nested for loops) and vectorized (exploiting Numpy's broadcasting) functions.</figcaption>
     </figure>
 </center>
 
