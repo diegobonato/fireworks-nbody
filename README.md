@@ -24,6 +24,14 @@ You can find more informations in the `project` folder.
 
 <center>
     <figure>
+        <img src="project/attachments_report_cpu_optimization/plots/numba_timings.png" alt="Comparison Image">
+        <figcaption>Speed-up obtained using Numba's just-in-time compilation and multithreading.</figcaption>
+    </figure>
+</center>
+
+
+<center>
+    <figure>
         <img src="project/attachments_report_cpu_optimization/plots/comparison_single_evo_parallel_compute.png" alt="Comparison Image">
         <figcaption>Using multiprocessing (MPX) speeds up the computation of the acceleration for both the serial (two nested for loops) and vectorized (exploiting Numpy's broadcasting) functions.</figcaption>
     </figure>
