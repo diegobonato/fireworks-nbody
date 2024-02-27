@@ -24,7 +24,7 @@ You can find more informations in the `project` folder.
 
 <center>
     <figure>
-        <img src="project/attachments_report_cpu_optimization/plots/numba_cut.png" alt="Comparison Image">
+        <img src="project/attachments_report_cpu_optimization/plots/numba_cut2.png" alt="Comparison Image">
         <figcaption>Speed-up obtained using Numba's just-in-time compilation and multithreading.</figcaption>
     </figure>
 </center>
