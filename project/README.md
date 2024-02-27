@@ -1,3 +1,5 @@
+Here I copy-paste almost all the report relative to the CPU Optimization part. You can find the original notebook in the Reports folder. You can find the actual full scripts used to run the optimizations in the folder called `attachments_report_cpu_optimization`.
+
 # Cpu optimization
 
 In this section, we assess different methods to optimize N-body simulations with Python on CPU.
@@ -101,3 +103,52 @@ Finally, we show an extra analysis comparing the performance of the `multiproces
 We see that our multiprocessing implementation succeedingly speeds up the code up to $\sim 4$ times. Pay attention to the fact that for less than $\sim 1000$ particles there is no benefit in introducing multiprocessing. The speed-up is due to the fact that multiprocessing uses all the cores available. We already mentioned that our standard vectorized function uses 4 cores, thus we expected multiprocessing to take half time, since it uses 8 cores on our machine. Instead, it accelerates even more, showing that there is a better memory management.
 
 The best optimization is reached by parallelizing the vectorized function. Contrary to the numba optimization, numpy benefits from multiprocessing in this case. This may be due to the fact that we do not modify the behaviour of numpy per se, but instead we just control how memory is distributed across cores.
+
+Let's discuss ThreadPool vs Pool. In the following plot we see that the two methods are completely equal, at least in the range of particles that we assessed. We may see a difference if the task had a bigger I/O bound.
+
+<center>
+    <figure>
+        <img src="./attachments_report_cpu_optimization/plots/Pool_vs_ThreadPool.png" alt="Comparison Image">
+    </figure>
+</center>
+
+### Numba vs Multiprocessing.
+What's the fastest method to compute acceleration?
+
+We find that the parallelized version of numba direct is 5 times faster than the multiprocessed vectorized function. Another sign that a compilied version of the code is better than an interpreted one.
+
+<center>
+    <figure>
+        <img src="../attachments_report_cpu_optimization/plots/numba_vs_pool.png" alt="Comparison Image">
+    </figure>
+</center>
+
+### Multiprocessing - parallel evolutions, serial acceleration estimate
+
+We now use multiprocessing to run multiple simulations in parallel. Each process relates to an entire set of particles that is completely evolved; each process is independent from one another. Within each process, there is no optimization of the acceleration estimate (see next section for an implementation of both). 
+
+We compare the results with the time it takes for Python to run the different simulations in a sequential native for loop. We find that our apporach speeds-up computations significantly.
+
+
+<center>
+    <figure>
+        <img src="./attachments_report_cpu_optimization/plots/parallel_vs_serial.png" alt="Comparison Image">
+    </figure>
+</center>
+
+
+We see that the parallel simulations outperform the serial ones, only if more than $\sim 500$ particles per simulation are considered. Otherwise, there will be only an overhead introduced by the Pool.
+
+We show the first plot (Number of simulations = 1) as benchmark, and indeed in that case serial is better because there are multiple workers that try to split the task between them, resulting in an inefficient waste of resources.
+
+### Using Numba NJIT on parallel simulations
+
+Now, let's put everything together and see if we can run multiple simulations in parallel, each of them computing the accelerations using the optimized numba njit functions. 
+
+<center>
+    <figure>
+        <img src="./attachments_report_cpu_optimization/plots/for_numba_parallel_mp_and_njit.png" alt="Comparison Image">
+    </figure>
+</center>
+
+We see that using multiprocessing only adds a big overhead to NJIT, that confirms to be the fastest method we find to compute accelerations, both for one and for multiple simulations.
