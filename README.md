@@ -29,6 +29,7 @@ You can find more informations in the `project` folder.
     </figure>
 </center>
 
+-----------------------------------
 
 <center>
     <figure>
