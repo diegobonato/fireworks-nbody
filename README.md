@@ -8,6 +8,8 @@ It contains all the functions needed to run N-Body simulations. This repository 
 * `Fireworks` package: install it by running `pip install fireworks`
 * `project` folder: here you can find the final group project for the exam. It consists in three parts: CPU optimization, GPU optimization, Plummer Sphere simulation. I personally worked on the CPU optimization part.
 
+<img src="10_bodies_couple.gif">
+
 ## CPU Optimization - Final project summary
 
 In this project, we assess different methods to optimize N-body simulations with Python on CPU.
